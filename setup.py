@@ -1,6 +1,15 @@
+from os import path
+from re import search
 from setuptools import setup
 
-setup(name='puni',
+PACKAGE_NAME = "puni"
+HERE = path.abspath(path.dirname(__file__))
+
+with open(path.join(HERE, PACKAGE_NAME, 'version.py'),
+          encoding='utf-8') as fp:
+    VERSION = search("__version__ = '([^']+)'", fp.read()).group(1)
+
+setup(name=PACKAGE_NAME,
       version='0.3.0',
       description='Python UserNotes Interface for reddit',
       classifiers=[
@@ -14,7 +23,7 @@ setup(name='puni',
       license='GPLv3',
       packages=['puni'],
       install_requires=[
-        'praw>=3.2.0',
+        'praw >=3.5.0, <4',
       ],tests_require = [
         'nose',
       ],
