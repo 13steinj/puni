@@ -14,7 +14,7 @@ setup(name='puni',
       license='GPLv3',
       packages=['puni'],
       install_requires=[
-        'praw >=3.2.0, <4.0',
+        'praw >=3.5.0, <4.0',
       ],tests_require = [
         'nose',
       ],
